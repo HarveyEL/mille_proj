@@ -39,7 +39,7 @@
 - The google trends can actually be obtained day by day, but the data scale should be carefully dealt with because the time range decide the relative data range.
 - Test the coefficient of google trends and next day's gold ret from 2023/08/01 to now:
 - `new_test["war_report"].shift(1).corr(new_test["log_ret_gc"])`  shows a coef of 0.155, a strong positive one, suggests it can be a good factor to do gold ret prediction day by day.
-- More alpha signals can be constructed based on these basic data, like `new_test["war_report"]-new_test["war_report"].rolling(20).mean()`, `new_test["war_report"].rolling(20).std()` and so on,
+- More alpha signals can be constructed based on these basic data, like `new_test["war_report"]-new_test["war_report"].rolling(20).mean()`, `new_test["war_report"].rolling(20).std()` and so on。
 
 ##### 2.4 Examples of More indicators
 
@@ -52,11 +52,11 @@
 ##### 2.5 Conceptualization
 
 - Let $R_t$ denote the comprehensive political risk on day $t$, and $r_{t}^{gold}$ be the return of gold. We want to find a best $R_t$ as factor to predict the $r_{t}^{gold}$
-- Let $R_{t}^{num}$ and $R_{t}^{text}$ denote the number based risk factor vector and text based risk factor vector respectively, $R_{t}^{num}$ have some elements:$R_{t}^{1}$,$R_{t}^{2}$,... and so as $R_{t}^{text}$. The text-based factor usually apply statistic method like term frequency or NLP method like sentiment score to the original data.
-- $R_t = a*R_{t}^{num}+b*R_{t}^{text}$
+- Let $R_{t}^{num}$ and $R_{t}^{text}$ denote the number based risk factor vector and text based risk factor vector respectively, $R_{t}^{num}$ have some elements: $R_{t}^{1}$ , $R_{t}^{2}$ ,... and so as $R_{t}^{text}$ . The text-based factor usually apply statistic method like term frequency or NLP method like sentiment score to the original data.
+- $R_{t} = a * R_{t}^{num} + b * R_{t}^{text}$ 
 - a and b are vectors help us finally get a normed, reasonably weighted factor.
 
 #### 3. More discussion
 
 - The political risk factor is an alternative factor and it is almost independent of the price-volume data. It can help us in better constructing a big prediction model for gold, reflecting the political environment and social reaction to public events, with all other factors including price-volume/industry fundamentals and so on.
-- The effectiveness of the factor can be examined by IC(corr) or relative gain to the overall model (tree or MLP).
+- The effectiveness of the factor can be examined by IC(corr) or marginal gain to the overall model (tree or MLP).

@@ -30,4 +30,8 @@ Tool: Coding environment and supportive tools: calculation, visualization & expe
 
 - The framework should be able to select most helpful alphas from the pool, and make progress in the final prediction result.
 - It can be used as a part of alpha management system, help filtering the new alphas and choose best alpha for modeling and trading. 
-- More research can be done based on it, like how to apply this framework to genetic programming to create more high value alphas.
+  
+#### 7. Adjustment for Larger Projects
+
+- More research can be done based on it, like how to apply this framework to genetic programming to create more high value alphas. The framework maybe should be modified to do parallel computing.
+- As part of alpha scoring or management system. It can help update the alphas and do inspections on alphas already in the pool.
